@@ -1,0 +1,29 @@
+{
+    "name": "implantac/motel-system",
+    "description": "Sistema Profissional de Gerenciamento de Motel",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "vlucas/phpdotenv": "^5.5",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "ramsey/uuid": "^4.7",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Implantac",
+            "email": "contato@implantac.com.br"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
