@@ -1,0 +1,54 @@
+:root {
+    --color-primary: #1a2234;
+    --color-secondary: #2a3245;
+    --color-accent: #ff9800;
+    --color-accent-dark: #e08800;
+    --color-accent-light: rgba(255, 152, 0, 0.2);
+    --color-success: #4CAF50;
+    --color-warning: #FFC107;
+    --color-danger: #F44336;
+    --color-info: #2196F3;
+    --color-violet: #8B5CF6;
+    --color-blue: #3B82F6;
+    --color-green: #10B981;
+    --color-red: #EF4444;
+    --color-yellow: #F59E0B;
+    --color-pink: #EC4899;
+    --color-indigo: #6366F1;
+    --color-purple: #8B5CF6;
+    --color-orange: #F97316;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary) !important;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.text-secondary {
+    color: var(--color-secondary) !important;
+}
+
+.bg-accent {
+    background-color: var(--color-accent) !important;
+}
+
+.bg-accent-dark {
+    background-color: var(--color-accent-dark) !important;
+}
+
+.text-accent {
+    color: var(--color-accent) !important;
+}
+
+.text-accent-light {
+    color: var(--color-accent-light) !important;
+}
+
+/* Additional utility classes can be added similarly */
