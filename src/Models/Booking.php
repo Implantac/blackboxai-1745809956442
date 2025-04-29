@@ -8,6 +8,8 @@ use App\Core\Application;
 class Booking extends Model {
     protected string $table = 'bookings';
 
+    public int $motel_id = 0;
+
     public function tableName(): string {
         return 'bookings';
     }
@@ -34,6 +36,23 @@ class Booking extends Model {
                 AND status = 'finalizada' 
                 AND payment_status = 'pago'";
         
+        try {
+            $result = $this->db->fetch($sql);
+            return (float) $result['total'];
+        } catch (\Exception $e) {
+            error_log($e->getMessage());
+            return 0.0;
+        }
+    }
+
+    public function getMonthlyRevenue(): float {
+        $sql = "SELECT COALESCE(SUM(total_amount), 0) as total 
+                FROM {$this->table} 
+                WHERE MONTH(check_in) = MONTH(CURDATE()) 
+                AND YEAR(check_in) = YEAR(CURDATE()) 
+                AND status = 'finalizada' 
+                AND payment_status = 'pago'";
+
         try {
             $result = $this->db->fetch($sql);
             return (float) $result['total'];
@@ -80,6 +99,27 @@ class Booking extends Model {
             return true;
         } catch (\Exception $e) {
             $this->db->rollBack();
+            error_log($e->getMessage());
+            return false;
+        }
+    }
+
+    public function checkin($bookingId): bool {
+        try {
+            $booking = $this->findOne(['id' => $bookingId, 'status' => 'pendente']);
+            if (!$booking) {
+                throw new \Exception('Reserva não encontrada ou já iniciada');
+            }
+
+            $this->update($bookingId, [
+                'check_in' => date('Y-m-d H:i:s'),
+                'status' => 'em_andamento'
+            ]);
+
+            (new Room())->updateStatus($booking['room_id'], 'ocupado');
+
+            return true;
+        } catch (\Exception $e) {
             error_log($e->getMessage());
             return false;
         }
