@@ -7,6 +7,8 @@ use App\Core\Model;
 class Room extends Model {
     protected string $table = 'rooms';
 
+    public int $motel_id = 0;
+
     public function tableName(): string {
         return 'rooms';
     }
