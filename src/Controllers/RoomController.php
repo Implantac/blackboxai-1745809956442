@@ -15,7 +15,12 @@ class RoomController extends Controller {
 
     public function index() {
         $roomModel = new Room();
-        $rooms = $roomModel->findAll();
+        $motelId = $_SESSION['motel_id'] ?? null; // Assuming motel_id stored in session
+        $conditions = [];
+        if ($motelId) {
+            $conditions['motel_id'] = $motelId;
+        }
+        $rooms = $roomModel->findAll($conditions);
         return $this->render('rooms/index', ['rooms' => $rooms]);
     }
 
