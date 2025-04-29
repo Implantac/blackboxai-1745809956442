@@ -6892,3 +6892,48 @@ Stack trace:
 [28-Apr-2025 17:11:12 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
 [28-Apr-2025 17:11:13 America/Sao_Paulo] Undefined variable $content
 [28-Apr-2025 17:11:13 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 17:46:44 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 17:46:45 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 17:46:45 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 17:57:31 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 17:57:31 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 17:57:31 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:49:13 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:49:13 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 19:49:13 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:49:15 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:49:15 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 19:49:15 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:49:18 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:50:30 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 19:50:30 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 19:50:30 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 20:21:11 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 20:21:11 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 20:21:11 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 20:54:28 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[28-Apr-2025 20:54:29 America/Sao_Paulo] Undefined variable $content
+[28-Apr-2025 20:54:29 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:04 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:04 America/Sao_Paulo] Undefined variable $content
+[29-Apr-2025 08:24:04 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:08 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:14 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:15 America/Sao_Paulo] Undefined variable $content
+[29-Apr-2025 08:24:15 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:15 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:16 America/Sao_Paulo] Undefined variable $content
+[29-Apr-2025 08:24:16 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:16 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:17 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:17 America/Sao_Paulo] Undefined variable $content
+[29-Apr-2025 08:24:17 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:17 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:18 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:18 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:18 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 08:24:19 America/Sao_Paulo] Undefined variable $content
+[29-Apr-2025 08:24:19 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 09:11:19 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[29-Apr-2025 09:11:20 America/Sao_Paulo] Undefined variable $content
+[29-Apr-2025 09:11:20 America/Sao_Paulo] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
