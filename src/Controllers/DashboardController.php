@@ -18,48 +18,30 @@ class DashboardController extends Controller {
     }
 
     public function index() {
-        // Obter estatísticas para o dashboard
-        $roomModel = new Room();
-        $bookingModel = new Booking();
+        $cache = new \App\Core\Cache();
+        $cacheKey = 'dashboard_stats';
+        $cacheTtl = 300; // 5 minutes
 
-        try {
-            // Total de quartos
-            $totalRooms = $roomModel->count();
-            
-            // Quartos ocupados
-            $occupiedRooms = $roomModel->count(['status' => 'ocupado']);
-            
-            // Quartos disponíveis
-            $availableRooms = $roomModel->count(['status' => 'disponivel']);
-            
-            // Quartos em limpeza
-            $cleaningRooms = $roomModel->count(['status' => 'limpeza']);
-            
-            // Reservas do dia
-            $todayBookings = $bookingModel->getTodayBookings();
-            
-            // Faturamento do dia
-            $todayRevenue = $bookingModel->getTodayRevenue();
-            
-            // Ocupação por tipo de quarto
-            $roomTypeOccupancy = $roomModel->getOccupancyByType();
+        $stats = $cache->get($cacheKey);
+        if (!$stats) {
+            // Obter estatísticas para o dashboard
+            $roomModel = new Room();
+            $bookingModel = new Booking();
 
-            return $this->render('dashboard/index', [
-                'stats' => [
-                    'totalRooms' => $totalRooms,
-                    'occupiedRooms' => $occupiedRooms,
-                    'availableRooms' => $availableRooms,
-                    'cleaningRooms' => $cleaningRooms,
-                    'todayBookings' => count($todayBookings),
-                    'todayRevenue' => $todayRevenue,
-                    'roomTypeOccupancy' => $roomTypeOccupancy
-                ],
-                'recentBookings' => $todayBookings
-            ]);
-        } catch (\Exception $e) {
-            Application::$app->session->setFlash('error', 'Erro ao carregar dados do dashboard');
-            return $this->render('dashboard/index', [
-                'stats' => [
+            try {
+                $stats = [
+                    'totalRooms' => $roomModel->count(),
+                    'occupiedRooms' => $roomModel->count(['status' => 'ocupado']),
+                    'availableRooms' => $roomModel->count(['status' => 'disponivel']),
+                    'cleaningRooms' => $roomModel->count(['status' => 'limpeza']),
+                    'todayBookings' => count($bookingModel->getTodayBookings()),
+                    'todayRevenue' => $bookingModel->getTodayRevenue(),
+                    'roomTypeOccupancy' => $roomModel->getOccupancyByType()
+                ];
+                $cache->set($cacheKey, $stats, $cacheTtl);
+            } catch (\Exception $e) {
+                Application::$app->session->setFlash('error', 'Erro ao carregar dados do dashboard');
+                $stats = [
                     'totalRooms' => 0,
                     'occupiedRooms' => 0,
                     'availableRooms' => 0,
@@ -67,9 +49,15 @@ class DashboardController extends Controller {
                     'todayBookings' => 0,
                     'todayRevenue' => 0,
                     'roomTypeOccupancy' => []
-                ],
-                'recentBookings' => []
-            ]);
+                ];
+            }
         }
+
+        $recentBookings = (new Booking())->getTodayBookings();
+
+        return $this->render('dashboard/index', [
+            'stats' => $stats,
+            'recentBookings' => $recentBookings
+        ]);
     }
 }
