@@ -23,13 +23,32 @@ class FinanceController extends Controller {
     }
 
     public function dailyReport(Request $request, Response $response) {
-        $bookingModel = new Booking();
-        $dailyRevenue = $bookingModel->getTodayRevenue();
+        $cache = new \App\Core\Cache();
+        $cacheKey = 'finance_daily_revenue';
+        $cacheTtl = 300; // 5 minutes
+
+        $dailyRevenue = $cache->get($cacheKey);
+        if ($dailyRevenue === null) {
+            $bookingModel = new Booking();
+            $dailyRevenue = $bookingModel->getTodayRevenue();
+            $cache->set($cacheKey, $dailyRevenue, $cacheTtl);
+        }
+
         return $this->render('finance/daily', ['dailyRevenue' => $dailyRevenue]);
     }
 
     public function monthlyReport(Request $request, Response $response) {
-        // Implement monthly report logic
-        return $this->render('finance/monthly');
+        $cache = new \App\Core\Cache();
+        $cacheKey = 'finance_monthly_report';
+        $cacheTtl = 3600; // 1 hour
+
+        $monthlyReport = $cache->get($cacheKey);
+        if ($monthlyReport === null) {
+            // TODO: Implement actual monthly report logic
+            $monthlyReport = []; // Placeholder
+            $cache->set($cacheKey, $monthlyReport, $cacheTtl);
+        }
+
+        return $this->render('finance/monthly', ['monthlyReport' => $monthlyReport]);
     }
 }
