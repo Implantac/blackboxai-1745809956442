@@ -37,7 +37,16 @@ class Controller {
 
     protected function getRequestBody() {
         $this->validateCsrfToken();
-        return Application::$app->request->getBody();
+        $body = Application::$app->request->getBody();
+        $sanitized = [];
+        foreach ($body as $key => $value) {
+            if (is_string($value)) {
+                $sanitized[$key] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+            } else {
+                $sanitized[$key] = $value;
+            }
+        }
+        return $sanitized;
     }
 
     protected function validateCsrfToken() {
