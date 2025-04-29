@@ -30,21 +30,21 @@ class AuthController extends Controller {
 
             if (!$userData || !password_verify($password, $userData['password'])) {
                 Application::$app->session->setFlash('error', 'Email ou senha inválidos');
-                return $this->render('auth/login');
+                return $this->render('auth/login_final_v2');
             }
 
             // Check if 2FA is enabled
             if (!empty($userData['two_factor_secret'])) {
                 if (!$twoFactorCode) {
                     // Prompt for 2FA code
-                    return $this->render('auth/login', ['require2FA' => true, 'email' => $email]);
+                    return $this->render('auth/login_final_v2', ['require2FA' => true, 'email' => $email]);
                 }
 
                 // Verify 2FA code
                 $google2fa = new \PragmaRX\Google2FA\Google2FA();
                 if (!$google2fa->verifyKey($userData['two_factor_secret'], $twoFactorCode)) {
                     Application::$app->session->setFlash('error', 'Código 2FA inválido');
-                    return $this->render('auth/login', ['require2FA' => true, 'email' => $email]);
+                    return $this->render('auth/login_final_v2', ['require2FA' => true, 'email' => $email]);
                 }
             }
 
@@ -65,7 +65,7 @@ class AuthController extends Controller {
             return $response->redirect('/dashboard');
         }
 
-        return $this->render('auth/login');
+        return $this->render('auth/login_final_v2');
     }
 
     public function logout(Request $request, Response $response) {
