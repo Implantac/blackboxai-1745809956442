@@ -16,7 +16,12 @@ class BookingController extends Controller {
 
     public function index() {
         $bookingModel = new Booking();
-        $bookings = $bookingModel->findAll();
+        $motelId = $_SESSION['motel_id'] ?? null; // Assuming motel_id stored in session
+        $conditions = [];
+        if ($motelId) {
+            $conditions['motel_id'] = $motelId;
+        }
+        $bookings = $bookingModel->findAll($conditions);
         return $this->render('bookings/index', ['bookings' => $bookings]);
     }
 
@@ -50,6 +55,18 @@ class BookingController extends Controller {
             return $this->redirect('/reservas');
         }
         return $this->render('bookings/show', ['booking' => $booking]);
+    }
+
+    public function checkin(Request $request, Response $response, $id) {
+        if ($request->isPost()) {
+            $bookingModel = new Booking();
+            if ($bookingModel->checkin($id)) {
+                $this->setFlashMessage('success', 'Check-in realizado com sucesso.');
+            } else {
+                $this->setFlashMessage('error', 'Erro ao realizar check-in.');
+            }
+            $response->redirect('/reservas');
+        }
     }
 
     public function checkout(Request $request, Response $response, $id) {
